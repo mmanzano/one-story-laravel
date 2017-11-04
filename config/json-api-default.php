@@ -2,6 +2,7 @@
 
 use App\Character;
 use App\Story;
+use App\User;
 
 return [
 
@@ -41,6 +42,7 @@ return [
     | `'posts' => App\Post::class`
     */
     'resources' => [
+        'users' => User::class,
         'stories' => Story::class,
         'characters' => Character::class,
     ],
@@ -77,7 +79,7 @@ return [
     */
     'url' => [
         'host' => null,
-        'namespace' => null,
+        'namespace' => 'api',
         'name' => 'api:',
     ],
 

@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\JsonApi\Stories\Hydrator;
-use App\Story;
+use App\User;
+use App\JsonApi\Authors\Hydrator;
 use CloudCreativity\LaravelJsonApi\Http\Controllers\EloquentController;
 
-class StoryController extends EloquentController
+class UserController extends EloquentController
 {
     /**
-     * StoryController constructor.
+     * CharacterController constructor.
      *
      * @param Hydrator $hydrator
      */
     public function __construct(Hydrator $hydrator)
     {
-        parent::__construct(new Story(), $hydrator);
+        parent::__construct(new User(), $hydrator);
     }
 }
