@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Story;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class StoryController extends Controller
@@ -18,7 +19,7 @@ class StoryController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Store a newly created resource in storage.
      *
      * @return \Illuminate\Http\Response
      */
@@ -28,34 +29,12 @@ class StoryController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      *
-     * @param  \App\Story  $story
+     * @param  \App\Story $story
      * @return \Illuminate\Http\Response
      */
-    public function show(Story $story)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Story  $story
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Story $story)
+    public function read(Story $story)
     {
         //
     }
@@ -63,8 +42,8 @@ class StoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Story  $story
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\Story $story
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Story $story)
@@ -75,10 +54,10 @@ class StoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Story  $story
+     * @param  \App\Story $story
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Story $story)
+    public function delete(Story $story)
     {
         //
     }

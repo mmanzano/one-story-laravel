@@ -1,5 +1,6 @@
 <?php
 
+use App\Character;
 use App\Story;
 
 return [
@@ -41,6 +42,7 @@ return [
     */
     'resources' => [
         'stories' => Story::class,
+        'characters' => Character::class,
     ],
 
     /*
@@ -75,7 +77,7 @@ return [
     */
     'url' => [
         'host' => null,
-        'namespace' => '/api',
+        'namespace' => null,
         'name' => 'api:',
     ],
 

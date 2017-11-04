@@ -16,3 +16,17 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+JsonApi::register('default', ['namespace' => 'Api', 'id' => '[\d]+'], function ($api, $router) {
+    $api->resource('stories', [
+        'controller' => 'StoryController',
+        'has-one' => 'author',
+        'has-many' => 'characters',
+
+    ]);
+
+    $api->resource('characters', [
+        'controller' => 'CharacterController',
+        'has-one' => 'story'
+    ]);
+});
