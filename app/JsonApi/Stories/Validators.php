@@ -41,6 +41,11 @@ class Validators extends AbstractValidatorProvider
         'title',
     ];
 
+    protected $allowedIncludePaths = [
+        'characters',
+        'user'
+    ];
+
     /**
      * @inheritdoc
      */
@@ -63,7 +68,7 @@ class Validators extends AbstractValidatorProvider
      */
     protected function relationshipRules(RelationshipsValidatorInterface $relationships, $record = null)
     {
-        $relationships->hasOne('author', 'user', is_null($record), false);
+        $relationships->hasOne('user', 'user', is_null($record), false);
         $relationships->hasMany('characters', 'character', is_null($record), false);
     }
 

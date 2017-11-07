@@ -17,6 +17,10 @@ Route::middleware('auth:api')->get('/api/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/api', function () {
+    return 'Hi from api';
+});
+
 JsonApi::register('default', ['namespace' => 'Api', 'id' => '[\d]+'], function ($api, $router) {
     $api->resource('users', [
         'controller' => 'UserController',
