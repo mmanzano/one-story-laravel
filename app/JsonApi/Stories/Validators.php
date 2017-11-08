@@ -20,6 +20,7 @@ class Validators extends AbstractValidatorProvider
     protected $queryRules = [
         'filter.title' => 'sometimes|string|min:1',
         'filter.body' => 'sometimes|string|min:1',
+        'filter.user' => 'sometimes|string|min:1',
         'page.number' => 'integer|min:1',
         'page.size' => 'integer|between:1,50',
     ];
@@ -39,6 +40,8 @@ class Validators extends AbstractValidatorProvider
     protected $allowedFilteringParameters = [
         'id',
         'title',
+        'body',
+        'user',
     ];
 
     protected $allowedIncludePaths = [

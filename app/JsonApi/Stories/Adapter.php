@@ -40,6 +40,10 @@ class Adapter extends EloquentAdapter
         if ($filters->has('body')) {
             $builder->where('stories.body', 'like', '%' . $filters->get('body') . '%');
         }
+
+        if ($filters->has('user')) {
+            $builder->where('stories.user_id', $filters->get('user'));
+        }
     }
 
     /**
